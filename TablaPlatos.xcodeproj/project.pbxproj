@@ -14,6 +14,12 @@
 		9AEF1BF01F731A1100A3B44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF1BEE1F731A1100A3B44A /* LaunchScreen.storyboard */; };
 		9AEF1BFB1F731A1100A3B44A /* TablaPlatosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF1BFA1F731A1100A3B44A /* TablaPlatosTests.swift */; };
 		9AEF1C061F731A1100A3B44A /* TablaPlatosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF1C051F731A1100A3B44A /* TablaPlatosUITests.swift */; };
+		9AEF1C1A1F731B6100A3B44A /* Plato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF1C191F731B6100A3B44A /* Plato.swift */; };
+		9AEF1C1B1F731D3300A3B44A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEF1C1C1F731D3300A3B44A /* AFNetworking.framework */; };
+		9AFDA4B71F7325C300B78B07 /* DetallePlatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDA4B61F7325C300B78B07 /* DetallePlatoViewController.swift */; };
+		C5E619D1D65ABF02E22C4D62 /* Pods_TablaPlatosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E157DB9889E92830FD655C1 /* Pods_TablaPlatosTests.framework */; };
+		D31FFB30A4D0DE6B6D8A17F8 /* Pods_TablaPlatos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E228E73278F933C42FEB261 /* Pods_TablaPlatos.framework */; };
+		EF75EAB4DF87F12B510AE70B /* Pods_TablaPlatosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761C4B06917776623D9DB80D /* Pods_TablaPlatosUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137C6909D8AAA3ACBE7344AD /* Pods-TablaPlatosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatosUITests/Pods-TablaPlatosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A45D5128984D9ABB1B637C0 /* Pods-TablaPlatosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatosTests/Pods-TablaPlatosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E157DB9889E92830FD655C1 /* Pods_TablaPlatosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TablaPlatosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E36F3F61F0B23E32B3C7F5 /* Pods-TablaPlatosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatosTests/Pods-TablaPlatosTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E228E73278F933C42FEB261 /* Pods_TablaPlatos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TablaPlatos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		744DFE9BBB021F1C6547FC27 /* Pods-TablaPlatos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos.debug.xcconfig"; sourceTree = "<group>"; };
+		761C4B06917776623D9DB80D /* Pods_TablaPlatosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TablaPlatosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEF1BE21F731A1100A3B44A /* TablaPlatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TablaPlatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEF1BE51F731A1100A3B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AEF1BE71F731A1100A3B44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +60,11 @@
 		9AEF1C011F731A1100A3B44A /* TablaPlatosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TablaPlatosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEF1C051F731A1100A3B44A /* TablaPlatosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablaPlatosUITests.swift; sourceTree = "<group>"; };
 		9AEF1C071F731A1100A3B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AEF1C191F731B6100A3B44A /* Plato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plato.swift; sourceTree = "<group>"; };
+		9AEF1C1C1F731D3300A3B44A /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AFDA4B61F7325C300B78B07 /* DetallePlatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePlatoViewController.swift; sourceTree = "<group>"; };
+		A5D404495B3F9051D0825928 /* Pods-TablaPlatosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatosUITests/Pods-TablaPlatosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E7E250845B140C934B485FF8 /* Pods-TablaPlatos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatos.release.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AEF1C1B1F731D3300A3B44A /* AFNetworking.framework in Frameworks */,
+				D31FFB30A4D0DE6B6D8A17F8 /* Pods_TablaPlatos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E619D1D65ABF02E22C4D62 /* Pods_TablaPlatosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +89,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF75EAB4DF87F12B510AE70B /* Pods_TablaPlatosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C9B6FCD9A9AA65F24DEB5E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AEF1C1C1F731D3300A3B44A /* AFNetworking.framework */,
+				3E228E73278F933C42FEB261 /* Pods_TablaPlatos.framework */,
+				1E157DB9889E92830FD655C1 /* Pods_TablaPlatosTests.framework */,
+				761C4B06917776623D9DB80D /* Pods_TablaPlatosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9AEF1BD91F731A1100A3B44A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +114,8 @@
 				9AEF1BF91F731A1100A3B44A /* TablaPlatosTests */,
 				9AEF1C041F731A1100A3B44A /* TablaPlatosUITests */,
 				9AEF1BE31F731A1100A3B44A /* Products */,
+				9C8515A57120E3E405EF4DEB /* Pods */,
+				4C9B6FCD9A9AA65F24DEB5E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +134,8 @@
 			children = (
 				9AEF1BE51F731A1100A3B44A /* AppDelegate.swift */,
 				9AEF1BE71F731A1100A3B44A /* ViewController.swift */,
+				9AFDA4B61F7325C300B78B07 /* DetallePlatoViewController.swift */,
+				9AEF1C181F731B2400A3B44A /* entities */,
 				9AEF1BE91F731A1100A3B44A /* Main.storyboard */,
 				9AEF1BEC1F731A1100A3B44A /* Assets.xcassets */,
 				9AEF1BEE1F731A1100A3B44A /* LaunchScreen.storyboard */,
@@ -125,6 +162,27 @@
 			path = TablaPlatosUITests;
 			sourceTree = "<group>";
 		};
+		9AEF1C181F731B2400A3B44A /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				9AEF1C191F731B6100A3B44A /* Plato.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		9C8515A57120E3E405EF4DEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				744DFE9BBB021F1C6547FC27 /* Pods-TablaPlatos.debug.xcconfig */,
+				E7E250845B140C934B485FF8 /* Pods-TablaPlatos.release.xcconfig */,
+				1A45D5128984D9ABB1B637C0 /* Pods-TablaPlatosTests.debug.xcconfig */,
+				21E36F3F61F0B23E32B3C7F5 /* Pods-TablaPlatosTests.release.xcconfig */,
+				137C6909D8AAA3ACBE7344AD /* Pods-TablaPlatosUITests.debug.xcconfig */,
+				A5D404495B3F9051D0825928 /* Pods-TablaPlatosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AEF1C0A1F731A1100A3B44A /* Build configuration list for PBXNativeTarget "TablaPlatos" */;
 			buildPhases = (
+				89979A402CD11F419145CF1B /* [CP] Check Pods Manifest.lock */,
 				9AEF1BDE1F731A1100A3B44A /* Sources */,
 				9AEF1BDF1F731A1100A3B44A /* Frameworks */,
 				9AEF1BE01F731A1100A3B44A /* Resources */,
+				25DD4E0A979CC12B4B2263FD /* [CP] Embed Pods Frameworks */,
+				F587A9D52395299E24C82ADC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AEF1C0D1F731A1100A3B44A /* Build configuration list for PBXNativeTarget "TablaPlatosTests" */;
 			buildPhases = (
+				1599A9E4B4AF156C0C0A38C1 /* [CP] Check Pods Manifest.lock */,
 				9AEF1BF21F731A1100A3B44A /* Sources */,
 				9AEF1BF31F731A1100A3B44A /* Frameworks */,
 				9AEF1BF41F731A1100A3B44A /* Resources */,
+				63655F0B3F27A1CD040B6A31 /* [CP] Embed Pods Frameworks */,
+				ABC63FA0178DE96D68A3DDD7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AEF1C101F731A1100A3B44A /* Build configuration list for PBXNativeTarget "TablaPlatosUITests" */;
 			buildPhases = (
+				93989DFD91889AE1C9E38F6C /* [CP] Check Pods Manifest.lock */,
 				9AEF1BFD1F731A1100A3B44A /* Sources */,
 				9AEF1BFE1F731A1100A3B44A /* Frameworks */,
 				9AEF1BFF1F731A1100A3B44A /* Resources */,
+				638769F553E04162B7105ED9 /* [CP] Embed Pods Frameworks */,
+				3A18A98B12C832A628E4C19C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +321,164 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1599A9E4B4AF156C0C0A38C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TablaPlatosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25DD4E0A979CC12B4B2263FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A18A98B12C832A628E4C19C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatosUITests/Pods-TablaPlatosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63655F0B3F27A1CD040B6A31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatosTests/Pods-TablaPlatosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		638769F553E04162B7105ED9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatosUITests/Pods-TablaPlatosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89979A402CD11F419145CF1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TablaPlatos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93989DFD91889AE1C9E38F6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TablaPlatosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC63FA0178DE96D68A3DDD7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatosTests/Pods-TablaPlatosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F587A9D52395299E24C82ADC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9AEF1BDE1F731A1100A3B44A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AEF1C1A1F731B6100A3B44A /* Plato.swift in Sources */,
 				9AEF1BE81F731A1100A3B44A /* ViewController.swift in Sources */,
+				9AFDA4B71F7325C300B78B07 /* DetallePlatoViewController.swift in Sources */,
 				9AEF1BE61F731A1100A3B44A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +643,7 @@
 		};
 		9AEF1C0B1F731A1100A3B44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744DFE9BBB021F1C6547FC27 /* Pods-TablaPlatos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +659,7 @@
 		};
 		9AEF1C0C1F731A1100A3B44A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E250845B140C934B485FF8 /* Pods-TablaPlatos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +675,7 @@
 		};
 		9AEF1C0E1F731A1100A3B44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A45D5128984D9ABB1B637C0 /* Pods-TablaPlatosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +693,7 @@
 		};
 		9AEF1C0F1F731A1100A3B44A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21E36F3F61F0B23E32B3C7F5 /* Pods-TablaPlatosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +711,7 @@
 		};
 		9AEF1C111F731A1100A3B44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 137C6909D8AAA3ACBE7344AD /* Pods-TablaPlatosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +728,7 @@
 		};
 		9AEF1C121F731A1100A3B44A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D404495B3F9051D0825928 /* Pods-TablaPlatosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
