@@ -18,33 +18,33 @@ class DetallePlatoViewController: UIViewController {
     @IBOutlet weak var lugarTextField: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
     @IBAction func hacerPedido(_ sender: Any) {
         
-        if(nombreTextField.text == nil || nombreTextField.text == ""){
+        if nombreTextField.text == nil || nombreTextField.text == "" {
             showAlert(title: "Nombre vacío", message: "Debe agregar un nombre para realizar el pedido", closeButtonTitle: "Cerrar")
             return
         }
         
-        if(lugarTextField.text == nil || lugarTextField.text == ""){
+        if lugarTextField.text == nil || lugarTextField.text == "" {
             showAlert(title: "Lugar vacío", message: "Debe agregar un lugar para realizar el pedido", closeButtonTitle: "Cerrar")
             return
         }
-        
+    
         let params: [String:Any] = [
             "platoID":String(platoSeleccionado.id),
             "cliente":nombreTextField.text!,
             "lugar":lugarTextField.text!
         ]
-        
         manager.requestSerializer = AFJSONRequestSerializer()
-        manager.post("/pedidos", parameters: params, progress: { (progress) in }, success: { (task:URLSessionDataTask, response) in
+        manager.post("/pedidos", parameters: params, progress: { (progress) in
+        }, success: { (task:URLSessionDataTask, response) in
             
             let dictionaryResponse: NSDictionary = response! as! NSDictionary
+            print(dictionaryResponse)
             
             let alertController = UIAlertController(title: "Pedido exitoso", message: dictionaryResponse["msg"] as? String, preferredStyle: .alert)
             
@@ -55,23 +55,27 @@ class DetallePlatoViewController: UIViewController {
             
             self.present(alertController, animated: true){
             }
+
             
-        }) { (task:URLSessionDataTask?, error: Error) in
-        self.showAlert(title: "Error en la solicitud", message: error.localizedDescription, closeButtonTitle: "Cerrar")
+        })  {  (task: URLSessionDataTask?, error: Error) in
+            print("Error Task: \(task) -- Error response: \(error) ")
+            self.showAlert(title: "Error en la solicitud", message: error.localizedDescription, closeButtonTitle: "Cerrar")
         }
     }
+    
     
     func showAlert(title:String, message:String, closeButtonTitle:String){
         let alertController = UIAlertController(title: title, message:message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title:closeButtonTitle, style: .default){ (action: UIAlertAction) in
-                //Ejecutar algún código al pulsar esta opcion
+            //Ejecutar algún código al pulsar esta opcion
         }
         alertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true)
+        self.present(alertController, animated: true){
+            
+        }
     }
-    
     
     @IBAction func volverBtn(_ sender: Any) {
         //Método para deshacer la transición

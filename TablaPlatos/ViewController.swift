@@ -11,10 +11,10 @@ import AFNetworking
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableViewPlatos: UITableView!
+    
     //Definición del array de celdas en la tabla
     var platos:[Plato] = [Plato]()
-    
-    @IBOutlet weak var tableViewPlatos: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         manager.get("/platos", parameters: nil, progress: {(progress) in
         }, success: { (task: URLSessionDataTask, response) in
             let arrayResponse: NSArray = response! as! NSArray
+            
             for item in arrayResponse {
                 let currentPlato: Plato = Plato(item as! Dictionary<String,AnyObject>)
                 self.platos.append(currentPlato)
