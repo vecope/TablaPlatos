@@ -9,11 +9,14 @@
 import UIKit
 import AFNetworking
 
+var metodoSeleccionado: String = "Efectivo"
+
 class DetallePlatoViewController: UIViewController {
 
     var platoSeleccionado: Plato!
     
   
+    @IBOutlet weak var labelMetodoPago: UILabel!
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var lugarTextField: UITextField!
     
@@ -22,6 +25,12 @@ class DetallePlatoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        labelMetodoPago.text = "Pago con " + metodoSeleccionado
+    }
+    
     @IBAction func hacerPedido(_ sender: Any) {
         
         if nombreTextField.text == nil || nombreTextField.text == "" {
