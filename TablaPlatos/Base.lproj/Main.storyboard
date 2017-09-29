@@ -52,6 +52,11 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgI-ng-uKk">
+                                <rect key="frame" x="83" y="207" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cambiar el método de pago"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe0-ve-Jyz">
                                 <rect key="frame" x="106" y="591" width="163" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,17 +69,57 @@
                                     <action selector="hacerPedido:" destination="KRf-eD-09U" eventType="touchUpInside" id="9zj-dw-R59"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgI-ng-uKk">
-                                <rect key="frame" x="83" y="207" width="208" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location: XX,YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5O-CY-7n5">
+                                <rect key="frame" x="25" y="236" width="316" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cambiar el método de pago"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk8-nm-wwe">
+                                <rect key="frame" x="67" y="414" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cámara"/>
+                                <connections>
+                                    <action selector="tomarFoto:" destination="KRf-eD-09U" eventType="touchUpInside" id="XHN-4f-uxh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT3-cp-KhW">
+                                <rect key="frame" x="188" y="413" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seleccionar foto"/>
+                                <connections>
+                                    <action selector="seleccionarFoto:" destination="KRf-eD-09U" eventType="touchUpInside" id="XpI-Wl-pAd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXi-xq-w4f">
+                                <rect key="frame" x="67" y="278" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label info acelerometro" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9B-ml-1ah">
+                                <rect key="frame" x="82" y="473" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XC-mL-nqB">
+                                <rect key="frame" x="60" y="511" width="247" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Obtener info Acelerometro"/>
+                                <connections>
+                                    <action selector="obtenerInfoAcelerometro:" destination="KRf-eD-09U" eventType="touchUpInside" id="bV9-1C-JIS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="cs0-OM-4y1"/>
                     </view>
                     <connections>
+                        <outlet property="imagenPreview" destination="nXi-xq-w4f" id="vmM-c7-ixp"/>
+                        <outlet property="labelInfoAcelerometro" destination="Y9B-ml-1ah" id="JT4-KK-an6"/>
                         <outlet property="labelMetodoPago" destination="b2d-6d-3IC" id="8XF-br-BMa"/>
+                        <outlet property="locationLabel" destination="v5O-CY-7n5" id="aMw-sd-maF"/>
                         <outlet property="lugarTextField" destination="EwF-jy-kjP" id="7mS-54-j1U"/>
                         <outlet property="nombreTextField" destination="oBn-UC-pmP" id="7KR-Gt-5AY"/>
                         <segue destination="Kui-Wm-eoq" kind="presentation" identifier="GoToMetodoDePago" id="NeC-Jg-4nt"/>
@@ -82,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ayn-ST-FDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="133"/>
+            <point key="canvasLocation" x="880.79999999999995" y="132.68365817091455"/>
         </scene>
         <!--Metodo Pago View Controller-->
         <scene sceneID="Bii-dD-RE8">
@@ -184,6 +229,24 @@
                                                     <color key="textColor" red="0.0" green="0.4550089813" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgD-Sa-jQ3">
+                                                    <rect key="frame" x="227" y="54" width="140" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Whatsapp">
+                                                        <color key="titleColor" red="0.11688912037126614" green="0.85876031091370564" blue="0.36695749395647226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="compartirPlatoWhatsapp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4e-mY-Ini"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfQ-tF-rgr">
+                                                    <rect key="frame" x="258" y="25" width="78" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Compartir"/>
+                                                    <connections>
+                                                        <action selector="compartirPlato:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNv-7D-W5K"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>

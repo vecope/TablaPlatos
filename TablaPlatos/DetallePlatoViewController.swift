@@ -8,21 +8,38 @@
 
 import UIKit
 import AFNetworking
+import CoreLocation
+import CoreMotion
 
 var metodoSeleccionado: String = "Efectivo"
 
-class DetallePlatoViewController: UIViewController {
+class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var motionManager: CMMotionManager!
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var userLocation: CLLocation!
 
     var platoSeleccionado: Plato!
     
-  
+    @IBOutlet weak var locationLabel: UILabel!
+    
     @IBOutlet weak var labelMetodoPago: UILabel!
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var lugarTextField: UITextField!
     
     override func viewDidLoad() {
-
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        userLocation = nil
+        
+        motionManager = CMMotionManager()
+        motionManager.startAccelerometerUpdates()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +47,62 @@ class DetallePlatoViewController: UIViewController {
         
         labelMetodoPago.text = "Pago con " + metodoSeleccionado
     }
+    
+    @IBOutlet weak var labelInfoAcelerometro: UILabel!
+    
+    
+    @IBAction func obtenerInfoAcelerometro(_ sender: Any) {
+        
+        if let accelerometerData = motionManager.accelerometerData{
+            labelInfoAcelerometro.text = "X:" + String(accelerometerData.acceleration.x) + "Y:" + String(accelerometerData.acceleration.y) + "Z:" + String(accelerometerData.acceleration.z)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    @IBOutlet weak var imagenPreview: UIImageView!
+    
+    @IBAction func tomarFoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func seleccionarFoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        if mediaType.isEqual(to: kUTTypeImage as String){
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            imagenPreview.image = image
+        }
+    }
+    
     
     @IBAction func hacerPedido(_ sender: Any) {
         
@@ -70,6 +143,21 @@ class DetallePlatoViewController: UIViewController {
             print("Error Task: \(task) -- Error response: \(error) ")
             self.showAlert(title: "Error en la solicitud", message: error.localizedDescription, closeButtonTitle: "Cerrar")
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let latestLocation: CLLocation = locations[locations.count - 1]
+        
+        if userLocation == nil {
+            userLocation = latestLocation
+        }
+        locationLabel.text = "("+String(userLocation.coordinate.latitude)+","+String(userLocation.coordinate.longitude)+")"
+        print("("+String(userLocation.coordinate.latitude)+","+String(userLocation.coordinate.longitude)+")")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager error: "+error.localizedDescription)
     }
     
     

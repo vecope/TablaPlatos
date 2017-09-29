@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9ACA4CC81F7E7BDC00E0F396 /* MetodoPagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA4CC71F7E7BDC00E0F396 /* MetodoPagoViewController.swift */; };
+		9ACA4CCB1F7E86E600E0F396 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA4CC91F7E86E600E0F396 /* Contacts.framework */; };
+		9ACA4CCC1F7E86E600E0F396 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA4CCA1F7E86E600E0F396 /* ContactsUI.framework */; };
+		9ACA4CCE1F7E888F00E0F396 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA4CCD1F7E888E00E0F396 /* MessageUI.framework */; };
+		9ACA4CD01F7EA93000E0F396 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA4CCF1F7EA93000E0F396 /* CoreLocation.framework */; };
+		9ACA4CD21F7EAED300E0F396 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACA4CD11F7EAED300E0F396 /* CoreMotion.framework */; };
 		9AEF1BE61F731A1100A3B44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF1BE51F731A1100A3B44A /* AppDelegate.swift */; };
 		9AEF1BE81F731A1100A3B44A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF1BE71F731A1100A3B44A /* ViewController.swift */; };
 		9AEF1BEB1F731A1100A3B44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF1BE91F731A1100A3B44A /* Main.storyboard */; };
@@ -49,6 +54,11 @@
 		744DFE9BBB021F1C6547FC27 /* Pods-TablaPlatos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablaPlatos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablaPlatos/Pods-TablaPlatos.debug.xcconfig"; sourceTree = "<group>"; };
 		761C4B06917776623D9DB80D /* Pods_TablaPlatosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TablaPlatosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACA4CC71F7E7BDC00E0F396 /* MetodoPagoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoViewController.swift; sourceTree = "<group>"; };
+		9ACA4CC91F7E86E600E0F396 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		9ACA4CCA1F7E86E600E0F396 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		9ACA4CCD1F7E888E00E0F396 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9ACA4CCF1F7EA93000E0F396 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9ACA4CD11F7EAED300E0F396 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9AEF1BE21F731A1100A3B44A /* TablaPlatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TablaPlatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEF1BE51F731A1100A3B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AEF1BE71F731A1100A3B44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACA4CD21F7EAED300E0F396 /* CoreMotion.framework in Frameworks */,
+				9ACA4CD01F7EA93000E0F396 /* CoreLocation.framework in Frameworks */,
+				9ACA4CCE1F7E888F00E0F396 /* MessageUI.framework in Frameworks */,
+				9ACA4CCB1F7E86E600E0F396 /* Contacts.framework in Frameworks */,
+				9ACA4CCC1F7E86E600E0F396 /* ContactsUI.framework in Frameworks */,
 				9AEF1C1B1F731D3300A3B44A /* AFNetworking.framework in Frameworks */,
 				D31FFB30A4D0DE6B6D8A17F8 /* Pods_TablaPlatos.framework in Frameworks */,
 			);
@@ -101,6 +116,11 @@
 		4C9B6FCD9A9AA65F24DEB5E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9ACA4CD11F7EAED300E0F396 /* CoreMotion.framework */,
+				9ACA4CCF1F7EA93000E0F396 /* CoreLocation.framework */,
+				9ACA4CCD1F7E888E00E0F396 /* MessageUI.framework */,
+				9ACA4CC91F7E86E600E0F396 /* Contacts.framework */,
+				9ACA4CCA1F7E86E600E0F396 /* ContactsUI.framework */,
 				9AEF1C1C1F731D3300A3B44A /* AFNetworking.framework */,
 				3E228E73278F933C42FEB261 /* Pods_TablaPlatos.framework */,
 				1E157DB9889E92830FD655C1 /* Pods_TablaPlatosTests.framework */,
@@ -653,7 +673,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8J2KWDHXR;
 				INFOPLIST_FILE = TablaPlatos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camiloalfonso.TablaPlatos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -670,7 +690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8J2KWDHXR;
 				INFOPLIST_FILE = TablaPlatos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camiloalfonso.TablaPlatos;
 				PRODUCT_NAME = "$(TARGET_NAME)";

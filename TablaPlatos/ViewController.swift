@@ -8,8 +8,13 @@
 
 import UIKit
 import AFNetworking
+import Contacts
+import ContactsUI
+import MessageUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate, MFMessageComposeViewControllerDelegate {
+    
+    let contactPicker: CNContactPickerViewController = CNContactPickerViewController()
     
     @IBOutlet weak var tableViewPlatos: UITableView!
     
@@ -23,7 +28,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewPlatos.delegate = self
         tableViewPlatos.dataSource = self
         
+        contactPicker.delegate = self
+        
         getPlatos()
+        
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        print(contact)
+        
+        picker.dismiss(animated: true) {
+            self.sendSMS(contact: contact)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .sent:
+            print("Message Sent")
+        case .failed:
+            print ("Message Failed")
+        case .cancelled:
+            print("Message Cancelled")
+        }
+    }
+    
+    func sendSMS(contact: CNContact){
+        if !MFMessageComposeViewController.canSendText(){
+            print("No es posible enviar mensajes desde este dispositivo")
+            return
+        }
+        
+        if contact.phoneNumbers.count > 0 {
+            let recipients: [String] = [contact.phoneNumbers[0].value.stringValue, "3001234567"]
+            let messageController: MFMessageComposeViewController = MFMessageComposeViewController()
+            
+            messageController.messageComposeDelegate = self
+            messageController.recipients = recipients
+            messageController.body="Mensaje de prueba"
+            
+            self.present(messageController, animated: true, completion: nil)
+        }
+        else{
+            print("El contacto no tiene números telefónicos")
+        }
     }
     
     func getPlatos(){
@@ -72,6 +120,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let platoSeleccionado: Plato = platos[indexPath.row]
         self.performSegue(withIdentifier: "GoToDetallePlato", sender: platoSeleccionado)
+    }
+    
+    @IBAction func compartirPlato(_ sender: Any) {
+        self.present(contactPicker, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func compartirPlatoWhatsapp(_ sender: Any) {
+        
+        let msg = "Mensaje de prueba"
+        let urlWhats = "whatsapp://send?text=\(msg)"
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+            
+            if let whatsappURL = URL(string: urlString){
+                if UIApplication.shared.canOpenURL(whatsappURL){
+                    UIApplication.shared.open(whatsappURL, options: [:], completionHandler: {(completed:Bool) in })
+                }
+                else{
+                    print("No se puede abrir WhatsApp, quizá no esté instalado.")
+                }
+            }
+        }
+        
+        
+        
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
