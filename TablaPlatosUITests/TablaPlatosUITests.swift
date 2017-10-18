@@ -31,6 +31,20 @@ class TablaPlatosUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        let stopButton = app.navigationBars["Pedido"].buttons["Stop"]
+        stopButton.tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["9000"]/*[[".cells.staticTexts[\"9000\"]",".staticTexts[\"9000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        stopButton.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["11000"]/*[[".cells.staticTexts[\"11000\"]",".staticTexts[\"11000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Obtener info Acelerometro"].tap()
+        app.buttons["Hacer pedido"].tap()
+        app.alerts["Nombre vacío"].buttons["Cerrar"].tap()
+        stopButton.tap()
+                        
     }
     
 }

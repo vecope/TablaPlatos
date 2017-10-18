@@ -119,6 +119,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let platoSeleccionado: Plato = platos[indexPath.row]
+        GlobalVariable.sharedInstance.ultimoPlatoSeleccionado = platoSeleccionado
+        print(GlobalVariable.sharedInstance.ultimoPlatoSeleccionado!.nombre!)
         self.performSegue(withIdentifier: "GoToDetallePlato", sender: platoSeleccionado)
     }
     

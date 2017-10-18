@@ -9,12 +9,6 @@
 import UIKit
 
 class MetodoPagoViewController: UIViewController {
-
-    struct ConstantsSegmented {
-        let Credito = 0
-        let Debito = 1
-        let Efectivo = 2
-    }
     
     
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
