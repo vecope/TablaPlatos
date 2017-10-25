@@ -33,18 +33,34 @@ class TablaPlatosUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let app = XCUIApplication()
-        let stopButton = app.navigationBars["Pedido"].buttons["Stop"]
-        stopButton.tap()
-        
         let tablesQuery = app.tables
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["9000"]/*[[".cells.staticTexts[\"9000\"]",".staticTexts[\"9000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        stopButton.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["11000"]/*[[".cells.staticTexts[\"11000\"]",".staticTexts[\"11000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.buttons["Obtener info Acelerometro"].tap()
-        app.buttons["Hacer pedido"].tap()
-        app.alerts["Nombre vacío"].buttons["Cerrar"].tap()
-        stopButton.tap()
-                        
+        
+        let nombreTextField = app.textFields["Nombre"]
+        nombreTextField.tap()
+        nombreTextField.typeText("A")
+        
+        let lugarTextField = app.textFields["Lugar"]
+        lugarTextField.tap()
+        lugarTextField.tap()
+        lugarTextField.typeText("ml")
+        
+        let hacerPedidoButton = app.buttons["Hacer pedido"]
+        hacerPedidoButton.tap()
+        
+        let volverAPlatosButton = app.alerts["Pedido exitoso"].buttons["Volver a platos"]
+        volverAPlatosButton.tap()
+        
+        let staticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["15000"]/*[[".cells.staticTexts[\"15000\"]",".staticTexts[\"15000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        staticText.tap()
+        nombreTextField.tap()
+        nombreTextField.typeText("B")
+        lugarTextField.tap()
+        lugarTextField.tap()
+        lugarTextField.typeText("SD")
+        hacerPedidoButton.tap()
+        volverAPlatosButton.tap()
+        
     }
     
 }

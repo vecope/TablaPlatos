@@ -11,7 +11,8 @@ import AFNetworking
 import CoreLocation
 import CoreMotion
 
-var metodoSeleccionado: String = "Efectivo"
+var metodoSeleccionado: String = "Debito"
+
 
 class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -25,6 +26,7 @@ class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, U
     @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var labelMetodoPago: UILabel!
+    
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var lugarTextField: UITextField!
     
@@ -44,8 +46,13 @@ class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, U
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("Método: \(metodoSeleccionado)")
         labelMetodoPago.text = "Pago con " + metodoSeleccionado
+    }
+    
+    
+    @IBAction func cambiarMetodoPago(_ sender: Any) {
+        self.performSegue(withIdentifier: "GoToMetodoDePago", sender: sender)
     }
     
     @IBOutlet weak var labelInfoAcelerometro: UILabel!
@@ -153,7 +160,7 @@ class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, U
             userLocation = latestLocation
         }
         locationLabel.text = "("+String(userLocation.coordinate.latitude)+","+String(userLocation.coordinate.longitude)+")"
-        print("("+String(userLocation.coordinate.latitude)+","+String(userLocation.coordinate.longitude)+")")
+//        print("("+String(userLocation.coordinate.latitude)+","+String(userLocation.coordinate.longitude)+")")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -8,7 +8,15 @@
 
 import Foundation
 
-struct GlobalVariable{
-    static var sharedInstance = GlobalVariable()
-    var ultimoPlatoSeleccionado: Plato!
+
+class GlobalVariables: NSObject {
+    
+    //Ultimo plato seleccionado en la tabla de platos
+    var ultimoPlatoSeleccionado: Plato? = nil
+    var segmentedState: Int = 1
+    
+    static let sharedInstance = GlobalVariables()
+    //Previene que otras clases usen el '()' inicializador de esta clase
+    private override init() {
+    }
 }

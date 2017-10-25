@@ -8,9 +8,9 @@
 
 import UIKit
 
+
 class MetodoPagoViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var segmentedPago: UISegmentedControl!
     
@@ -24,7 +24,7 @@ class MetodoPagoViewController: UIViewController {
         
         // El timer simula la solicitud REST
         
-        timerREST = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(getMetodosPago), userInfo: nil, repeats: false)
+        timerREST = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getMetodosPago), userInfo: nil, repeats: false)
     }
 
     @objc func getMetodosPago(){
@@ -33,19 +33,29 @@ class MetodoPagoViewController: UIViewController {
     }
     
     @IBAction func cambiarMetodoPago(_ sender: Any) {
-        if segmentedPago.selectedSegmentIndex == ConstantsSegmented().Credito {
-            metodoSeleccionado = "Tarjeta de Crédito"
+        if segmentedPago.selectedSegmentIndex == ConstantsSegmented().Debito {
+            print("Debito")
+            metodoSeleccionado = "Tarjeta Débito"
         }
         else if segmentedPago.selectedSegmentIndex == ConstantsSegmented().Credito {
+            print("Credito")
             metodoSeleccionado = "Tarjeta de Crédito"
         }
         else if segmentedPago.selectedSegmentIndex == ConstantsSegmented().Efectivo {
+            print("Efectivo")
             metodoSeleccionado = "Efectivo"
         }
+        GlobalVariables.sharedInstance.segmentedState = segmentedPago.selectedSegmentIndex
+        print("Estado: \(GlobalVariables.sharedInstance.segmentedState) asignado de SelectedElement \(segmentedPago.selectedSegmentIndex)")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         timerREST.invalidate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        segmentedPago.selectedSegmentIndex = GlobalVariables.sharedInstance.segmentedState
+        print("should do something: State \(GlobalVariables.sharedInstance.segmentedState)")
     }
     
     @IBAction func confirmar(_ sender: Any) {

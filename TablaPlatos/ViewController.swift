@@ -30,7 +30,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         contactPicker.delegate = self
         
-        getPlatos()
+        getPlatos {(platos: [Plato]?) in
+            if platos != nil {
+                self.platos = platos!
+                DispatchQueue.main.async {
+                    self.tableViewPlatos.reloadData()
+                }
+            }
+            else {
+                print("Hubo un error al obtener los platos.")
+            }
+        }
         
     }
     
@@ -74,20 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func getPlatos(){
-        manager.get("/platos", parameters: nil, progress: {(progress) in
-        }, success: { (task: URLSessionDataTask, response) in
-            let arrayResponse: NSArray = response! as! NSArray
-            
-            for item in arrayResponse {
-                let currentPlato: Plato = Plato(item as! Dictionary<String,AnyObject>)
-                self.platos.append(currentPlato)
-                self.tableViewPlatos.reloadData()
-            }
-        }) { (task: URLSessionDataTask?, error: Error) in
-            print("Errortask: \(task) --ErrorResponse: \(error) ")
-        }
-    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return platos.count
@@ -103,7 +100,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Obtener (con el tag) la referencia a la vista de la imagen en la celda
         let imageView: UIImageView = cell.viewWithTag(1) as! UIImageView
-        imageView.setImageWith(URL(string: currentPlato.imagen!)!)
+        downloadImage(url: URL(string: currentPlato.imagen!)!, imageView: imageView)
+//        imageView.setImageWith(URL(string: currentPlato.imagen!)!)
+        
         
         //Obtener (con el tag) la referencia al campo de texto para el nombre
         let labelNombre: UILabel = cell.viewWithTag(2) as! UILabel
@@ -117,10 +116,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func downloadImage(url: URL, imageView: UIImageView){
+        print("Download started")
+//        Main Queue use
+//        getDataFromUrl(url: url) {
+//            (data, response, error) in
+//            guard let data = data, error == nil else {return}
+//            print(response.suggestedFilename ?? url.lastPathComponent)
+//            print("Download finished")
+//            DispatchQueue.main.async {
+//                () -> Void in imageView.image = UIImage(data: data)
+//            }
+//        }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            
+            self.getDataFromUrl(url: url) {
+                (data,response,error) in guard let data = data, error == nil else {return}
+                print(response.suggestedFilename ?? url.lastPathComponent)
+                print("Download Finished")
+                DispatchQueue.main.async() {
+                    () -> Void in imageView.image = UIImage(data:data)
+                }
+            }
+        }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _ response: URLResponse, _ error: Error?) -> Void){
+        URLSession.shared.dataTask(with: url){
+            (data, response, error) in completion(data, response!, error)
+        }.resume()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let platoSeleccionado: Plato = platos[indexPath.row]
-        GlobalVariable.sharedInstance.ultimoPlatoSeleccionado = platoSeleccionado
-        print(GlobalVariable.sharedInstance.ultimoPlatoSeleccionado!.nombre!)
+        
+        GlobalVariables.sharedInstance.ultimoPlatoSeleccionado = platoSeleccionado
+        print(GlobalVariables.sharedInstance.ultimoPlatoSeleccionado!.nombre!)
+        
         self.performSegue(withIdentifier: "GoToDetallePlato", sender: platoSeleccionado)
     }
     
@@ -161,7 +194,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
+extension UIViewController{
+    func getPlatos(_ completion: @escaping (_ success: [Plato]?) -> ()){
+        manager.get("/platos", parameters: nil, progress: {(progress) in
+        }, success: { (task: URLSessionDataTask, response) in
+            let arrayResponse: NSArray = response! as! NSArray
+            
+            var platosRespuesta: [Plato] = [Plato]()
+            for item in arrayResponse {
+                let currentPlato: Plato = Plato(item as! Dictionary<String,AnyObject>)
+                platosRespuesta.append(currentPlato)
+            }
+            
+            completion(platosRespuesta)
+            
+        }) { (task: URLSessionDataTask?, error: Error) in
+            print("Errortask: \(task) --ErrorResponse: \(error) ")
+            completion(nil)
+        }
+    }
+}
