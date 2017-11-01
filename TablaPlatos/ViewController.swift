@@ -27,9 +27,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Agrega los platos al array
         tableViewPlatos.delegate = self
         tableViewPlatos.dataSource = self
-        
+
         contactPicker.delegate = self
-        
+
         getPlatos {(platos: [Plato]?) in
             if platos != nil {
                 self.platos = platos!
@@ -41,6 +41,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("Hubo un error al obtener los platos.")
             }
         }
+        
+//        for index in 1...100000 {
+//            DispatchQueue.global(qos: .userInteractive).async {
+//                for index2 in 1...1000000 {
+//                    print("Prueba de estrés" + String(index) + ", " + String(index2))
+//                }
+//            }
+//        }
         
     }
     
@@ -100,8 +108,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Obtener (con el tag) la referencia a la vista de la imagen en la celda
         let imageView: UIImageView = cell.viewWithTag(1) as! UIImageView
-        downloadImage(url: URL(string: currentPlato.imagen!)!, imageView: imageView)
-//        imageView.setImageWith(URL(string: currentPlato.imagen!)!)
+        
+        //Anteriormente se descargaban (las imágenes siempre se mostraban)  
+        //downloadImage(url: URL(string: currentPlato.imagen!)!, imageView: imageView)
+        
+        //Ahora se usa caché
+        imageView.setImageWith(URL(string: currentPlato.imagen!)!)
         
         
         //Obtener (con el tag) la referencia al campo de texto para el nombre
