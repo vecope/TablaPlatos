@@ -7,6 +7,8 @@ target 'TablaPlatos' do
 
   # Pods for TablaPlatos
 pod 'AFNetworking', '~> 3.0'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 
   target 'TablaPlatosTests' do
     inherit! :search_paths
