@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
+import CoreData
 
 class GlobalVariables: NSObject {
     
     //Ultimo plato seleccionado en la tabla de platos
-    var ultimoPlatoSeleccionado: Plato? = nil
+    var ultimoPlatoSeleccionado: NSManagedObject? = nil
     var segmentedState: Int = 1
     
     static let sharedInstance = GlobalVariables()

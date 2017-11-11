@@ -11,6 +11,8 @@ import AFNetworking
 import CoreData
 import Firebase
 
+import GoogleMaps
+
 var baseURL:URL = URL(string: "http://demo7931028.mockable.io/")!
 let manager = AFHTTPSessionManager(baseURL: baseURL as URL!)
 
@@ -23,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        GMSServices.provideAPIKey("AIzaSyCuKYK0eSR8E579isQ7hUqmWiknwyGVL38")
+        
         return true
     }
     

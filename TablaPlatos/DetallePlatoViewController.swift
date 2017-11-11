@@ -10,6 +10,7 @@ import UIKit
 import AFNetworking
 import CoreLocation
 import CoreMotion
+import CoreData
 
 var metodoSeleccionado: String = "Debito"
 
@@ -21,7 +22,7 @@ class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, U
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
 
-    var platoSeleccionado: Plato!
+    var platoSeleccionado: NSManagedObject!
     
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -124,7 +125,7 @@ class DetallePlatoViewController: UIViewController, CLLocationManagerDelegate, U
         }
     
         let params: [String:Any] = [
-            "platoID":String(platoSeleccionado.id),
+            "platoID":String(describing: platoSeleccionado.value(forKeyPath: "id")),
             "cliente":nombreTextField.text!,
             "lugar":lugarTextField.text!
         ]

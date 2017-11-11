@@ -254,10 +254,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let platoSeleccionado: Plato = platos[indexPath.row]
+        let platoSeleccionado: NSManagedObject = platosCD[indexPath.row]
         
         GlobalVariables.sharedInstance.ultimoPlatoSeleccionado = platoSeleccionado
-        print(GlobalVariables.sharedInstance.ultimoPlatoSeleccionado!.nombre!)
         
         self.performSegue(withIdentifier: "GoToDetallePlato", sender: platoSeleccionado)
     }
@@ -291,7 +290,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToDetallePlato" {
             let viewController: DetallePlatoViewController = segue.destination as! DetallePlatoViewController
-            viewController.platoSeleccionado = sender as! Plato
+            viewController.platoSeleccionado = sender as! NSManagedObject
         }
     }
     
