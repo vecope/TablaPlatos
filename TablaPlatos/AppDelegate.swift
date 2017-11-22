@@ -26,7 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        GMSServices.provideAPIKey("AIzaSyCuKYK0eSR8E579isQ7hUqmWiknwyGVL38")
+//        GMSServices.provideAPIKey("AIzaSyCuKYK0eSR8E579isQ7hUqmWiknwyGVL38")
+        
+        NewRelicAgent.start(withApplicationToken: "AA0b720093ad283258222da5838a29291620d796fd")
         
         return true
     }
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         print("Por ejemplo acá me llegó una llamada - Probar")
     }
+    
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
